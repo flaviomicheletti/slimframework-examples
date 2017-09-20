@@ -5,13 +5,11 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
-$config = [
+$app = new \Slim\App([
     'settings' => [
-        'displayErrorDetails' => true # change this <------
+        'displayErrorDetails' => true
     ],
-];
-
-$app = new \Slim\App($config);
+]);
 
 $app->get('/', function (Request $req,  Response $res, $args = []) {
     echo "boilerplate";
