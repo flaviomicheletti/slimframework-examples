@@ -40,12 +40,12 @@ $app->get('/foo[/]', function (Request $req,  Response $res, $args = []) {
     echo "tanto /foo quanto foo/";
 });
 
-# /users, 
+# /users,
 # /users/,  <--- não corresponde
 # /users/1
 # /users/2
 # /users/3
-# etc.. 
+# etc..
 $app->get('/users[/{id}]', function ($request, $response, $args) {
     $id = $request->getAttribute('id');
     if ($id) {
@@ -73,7 +73,6 @@ $app->get('/products/{id:[0-9]+}', function ($request, $response, $args) {
 $app->get('/{var}', function (Request $req,  Response $res, $args = []) {
     echo "index - ser argumento é: " . $args['var'];
 });
-
 
 
 $app->run();
